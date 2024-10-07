@@ -52,12 +52,10 @@ const route = useRoute();
 
 const currentComponentName = ref('');
 
-// Watch for route changes to update the component name
 watch(route, (newRoute) => {
-  currentComponentName.value = newRoute.name || 'Home'; // Default to 'Home' if no name
+  currentComponentName.value = String(newRoute.name) || 'Home'; 
 });
 
-// Method to go back to the previous route
 const goBack = () => {
   router.back();
 };

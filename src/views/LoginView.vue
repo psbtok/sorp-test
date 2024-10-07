@@ -39,7 +39,7 @@ import ConfirmButton from '@/components/ConfirmButton.vue';
 const router = useRouter();
 const currentPassword = ref('');
 
-const handleEnter = (number) => {
+const handleEnter = (number: string | number) => {
   if (number === 'X') {
     return; 
   }

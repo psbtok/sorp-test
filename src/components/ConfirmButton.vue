@@ -1,10 +1,9 @@
 <template>
-  <button class="confirm-button" @click="handleClick">{{ word }}</button>
+  <button class="confirm-button" @click="emitClick">{{ word }}</button>
 </template>
 
-
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   word: {
@@ -13,6 +12,11 @@ const props = defineProps({
   }
 });
 
+const emit = defineEmits();
+
+const emitClick = () => {
+  emit('click');
+};
 </script>
 
 <style scoped>

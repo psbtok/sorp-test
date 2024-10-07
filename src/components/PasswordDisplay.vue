@@ -1,8 +1,9 @@
 <template>
   <div class="password-display">
+    <div></div>
     <label>Enter admin password:</label>
-    <div>
-      <span v-if="!isPasswordVisible">{{ maskedPassword }}</span>
+    <div class="password-info">
+      <span class="password-hidden" v-if="!isPasswordVisible">{{ maskedPassword }}</span>
       <span v-else>{{ currentPassword }}</span>
       <button @click="togglePasswordVisibility">
         {{ isPasswordVisible ? 'Hide' : 'Show' }}
@@ -10,6 +11,47 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.password-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  border-radius: 0.4em;
+  height: 20vw;
+  padding: 8px 16px;
+}
+
+span {
+  letter-spacing: 8px;
+}
+
+.password-info {
+  display: flex;
+  height: 22px;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 0.8em;
+  margin-bottom: 4px;
+  color: var(--regular-grey);
+}
+
+.password-hidden {
+  position: relative;
+  top: 3px;
+  letter-spacing: 10px;
+}
+
+button {
+  color: var(--regular-grey);
+  background: none;
+  text-decoration: underline;
+}
+</style>
 
 <script setup lang="ts">
 import { ref, defineProps, computed } from 'vue';
@@ -28,13 +70,3 @@ const togglePasswordVisibility = () => {
   isPasswordVisible.value = !isPasswordVisible.value;
 };
 </script>
-
-<style scoped>
-.password-display {
-  margin-bottom: 20px;
-}
-
-button {
-  margin-left: 10px;
-}
-</style>

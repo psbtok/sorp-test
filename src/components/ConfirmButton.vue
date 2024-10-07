@@ -22,7 +22,7 @@ const handleClick = () => {
 .confirm-button {
   width: 100%;
   height: 20vw;
-  font-size: 1.25em;
+  font-size: 1.1em;
   border-radius: 1em;
   background-color: #3448F0;
   color: white;

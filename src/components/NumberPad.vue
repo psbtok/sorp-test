@@ -7,60 +7,72 @@
         </button>
       </div>
       <div class="row">
-        <button @click="clear">X</button>
-        <button @click="enterNumber(0)">0</button>
-        <button @click="deleteLast">←</button>
+        <button @click="clear">
+          <img class="icon-cross" src="../assets/cross.svg" alt="Clear"/>
+        </button>
+        <button @click="enterNumber(0)"><span>0</span></button>
+        <button @click="deleteLast">
+          <img class="icon-arrow" src="../assets/clear-arrow.svg" alt="Delete Last"/>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .number-pad {
-      display: flex;
-      flex-direction: column;
-    }
+.number-pad {
+  display: flex;
+  flex-direction: column;
+}
 
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-  }
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 
-  .row {
-    display: flex;
-    gap: 0.5em;
-  }
+.row {
+  display: flex;
+  gap: 0.5em;
+}
 
-  button {
-    width: 28vw;
-    height: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border: 2px solid white;
-    border-radius: 1em;
-    transition-duration: 0.2s;
-    color: var(--highlight-blue);
+button {
+  width: 28vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 2px solid white;
+  border-radius: 1em;
+  transition-duration: 0.2s;
+  color: var(--highlight-blue);
+  font-size: 1.25em;
+}
 
-    font-size: 1.25em;
-  }
+span {
+  font-size: 1em;
+  font-weight: 500;
+  transition-duration: 0.2s;
+}
 
-  span {
-    font-size: 0.8em;
-    font-weight: 500;
-    transition-duration: 0.2s;
-    font-size: 1em;
-  }
+.icon-arrow {
+  width: 2.5em; 
+  height: 2.5em;
+}
 
-  button:active {
-    border-color: var(--highlight-blue);
+.icon-cross {
+  width: 1.25em; 
+  height: 1.25em;
+}
 
-    span {
-      font-size: 0.9em;
-    }
-  }
+button:active {
+  border-color: var(--highlight-blue);
+}
+
+button:active span {
+  font-size: 0.9em;
+}
 </style>
 
 <script setup lang="ts">

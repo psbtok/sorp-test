@@ -14,9 +14,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     padding: 1em;
+    padding-bottom: 1.5em;
   }
 
   .confirm-button {
@@ -37,17 +38,14 @@ const handleEnter = (number) => {
     return; 
   }
   currentPassword.value += number;
-  console.log('Current Password:', currentPassword.value);
 };
 
 const handleClear = () => {
   currentPassword.value = '';
-  console.log('Cleared input');
 };
 
 const handleDeleteLast = () => {
   currentPassword.value = currentPassword.value.slice(0, -1);
-  console.log('Deleted last entry:', currentPassword.value);
 };
 </script>
 

@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import NavigationComponent from './components/NavigationComponent.vue'; 
+import { RouterView } from 'vue-router';
 </script>
 
 <style>
-  main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+main {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
 </style>
 
 <template>
   <main>
+    <NavigationComponent />
     <RouterView />
   </main>
 </template>

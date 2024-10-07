@@ -10,7 +10,7 @@ const router = createRouter({
       children: [
         {
           path: 'login',
-          name: 'login',
+          name: 'Password',
           component: LoginView
         }
       ]

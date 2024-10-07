@@ -6,4 +6,5 @@
     npm install
     npm run dev
 
-По ссылке доступно тестовое задание: http://localhost:5174/admin/login
+Тестовое задание будет доступно локально по ссылке: http://localhost:5174/admin/login
+А так же доступно онлайн тут: https://lucky-yeot-ffb4e6.netlify.app/admin/login/

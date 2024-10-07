@@ -13,9 +13,6 @@ const props = defineProps({
   }
 });
 
-const handleClick = () => {
-  console.log(`${props.word} button clicked!`);
-};
 </script>
 
 <style scoped>
@@ -24,13 +21,15 @@ const handleClick = () => {
   height: 20vw;
   font-size: 1.1em;
   border-radius: 1em;
-  background-color: #3448F0;
+  background-color: var(--highlight-blue);
   color: white;
-  border: none;
+  border: 2px solid var(--highlight-blue);
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
-.confirm-button:hover {
-  background-color: #4E46B4;
+.confirm-button:active {
+  background-color: white;
+  color: var(--highlight-blue);
 }
 </style>

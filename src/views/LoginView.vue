@@ -3,7 +3,11 @@
     <PasswordDisplay :currentPassword="currentPassword" />
     <div class="button-container">
       <NumberPad @enter="handleEnter" @clear="handleClear" @deleteLast="handleDeleteLast" />
-      <ConfirmButton class="confirm-button" word="Continue" />
+      <ConfirmButton 
+        @click="validatePassword"
+        class="confirm-button" 
+        word="Continue" 
+      />
     </div>
   </div>
 </template>
@@ -27,11 +31,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import PasswordDisplay from '@/components/PasswordDisplay.vue';
 import NumberPad from '@/components/NumberPad.vue';
 import ConfirmButton from '@/components/ConfirmButton.vue';
 
-const currentPassword = ref(''); 
+const router = useRouter();
+const currentPassword = ref('');
 
 const handleEnter = (number) => {
   if (number === 'X') {
@@ -46,6 +52,12 @@ const handleClear = () => {
 
 const handleDeleteLast = () => {
   currentPassword.value = currentPassword.value.slice(0, -1);
+};
+
+const validatePassword = () => {
+  if (currentPassword.value.length > 0) {
+    router.push('/home/');
+  }
 };
 </script>
 
